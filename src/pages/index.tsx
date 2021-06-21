@@ -1,6 +1,5 @@
-import { octokit } from "@/utils/fetcher";
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import React from "react";
+import { Template } from "@/components/templates/";
 
 const Home = (props: any) => {
   if (!props.repos.data) return <div>error!</div>;
@@ -8,11 +7,8 @@ const Home = (props: any) => {
   return <div>Hello Next.js</div>;
 };
 
-export const getStaticProps = async () => {
-  const repos = await octokit.request("GET /users/ninginx/repos", {
-    username: "ninginx",
-  });
-  return { props: { repos } };
+const Page = () => {
+  return <Template />;
 };
 
-export default Home;
+export default Page;
